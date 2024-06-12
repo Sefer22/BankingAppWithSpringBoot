@@ -25,6 +25,11 @@ public class AccountService {
         return accountRepository.save(account);
     }
     public Account withdraw(Long id,double amount) {
-
+        Account account = getAccount(id).orElseThrow(() -> new RuntimeException("Account not found"));
+        if(account.getBalance() < amount) {
+            throw new RuntimeException("Unsufficient funds");
+        }
+        account.setBalance(account.getBalance()-amount);
+        return accountRepository.save(account);
     }
 }
