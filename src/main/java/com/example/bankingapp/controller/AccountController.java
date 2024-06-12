@@ -5,6 +5,8 @@ import com.example.bankingapp.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @RestController
 @RequestMapping("api/accounts")
 public class AccountController {
@@ -22,5 +24,8 @@ public class AccountController {
     }
 
     @PostMapping("/{id}/deposit")
-    public Account deposit()
+    public Account deposit(@PathVariable Long id, @RequestBody Map<String,Double> request) {
+        Double amount = request.get("amount");
+        return accountService.deposit(id,amount);
+    }
 }
