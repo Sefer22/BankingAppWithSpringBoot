@@ -19,5 +19,7 @@ public class AccountService {
         return accountRepository.findById(id);
     }
 
-    public Account deposit(Long id,)
+    public Account deposit(Long id,double amount) {
+
+    }
 }
