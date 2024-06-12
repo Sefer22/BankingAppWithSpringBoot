@@ -15,7 +15,7 @@ public class AccountService {
         return accountRepository.save(account);
     }
 
-    public Optional<Account> getAccount(Long id, double amount) {
+    public Optional<Account> getAccount(Long id) {
         return accountRepository.findById(id);
     }
 
