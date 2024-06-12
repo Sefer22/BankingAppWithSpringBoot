@@ -28,4 +28,9 @@ public class AccountController {
         Double amount = request.get("amount");
         return accountService.deposit(id,amount);
     }
+
+    @PostMapping("/{id}/withdraw")
+    public Account withdraw(@PathVariable Long id,@RequestBody Map<String,Double> request) {
+
+    }
 }
