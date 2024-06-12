@@ -2,6 +2,7 @@ package com.example.bankingapp.service;
 
 import com.example.bankingapp.entity.Account;
 import com.example.bankingapp.repository.AccountRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -9,6 +10,7 @@ import java.util.Optional;
 @Service
 public class AccountService {
 
+    @Autowired
     private AccountRepository accountRepository;
 
     public Account createAccount(Account account) {
