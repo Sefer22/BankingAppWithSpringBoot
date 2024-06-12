@@ -20,6 +20,6 @@ public class AccountService {
     }
 
     public Account deposit(Long id,double amount) {
-
+        Account account = getAccount(id).orElseThrow(() -> new RuntimeException("Account not found"));
     }
 }
